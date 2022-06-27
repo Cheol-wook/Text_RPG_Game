@@ -69,22 +69,33 @@ namespace Text_RPG_Game
             {
                 case "1":
                     Console.WriteLine("단검을 집었습니다.");
-                    Console.WriteLine("당신은 천천히 동굴 속으로 걸음을 내딛었습니다.");
                     player = new sword();
                     mode = GameMode.First_Field;
                     Now_state();
+                    Console.Write("\n[계속] <");
+                    Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine("당신은 천천히 동굴 속으로 걸음을 내딛었습니다.");
                     break;
                 case "2":
                     Console.WriteLine("활을 집었습니다.");
-                    Console.WriteLine("당신은 천천히 동굴 속으로 걸음을 내딛었습니다.");
                     player = new bow();
                     mode = GameMode.First_Field;
+                    Now_state();
+                    Console.Write("\n[계속] <");
+                    Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine("당신은 천천히 동굴 속으로 걸음을 내딛었습니다.");
                     break;
                 case "3":
                     Console.WriteLine("지팡이를 집었습니다.");
-                    Console.WriteLine("당신은 천천히 동굴 속으로 걸음을 내딛었습니다.");
                     player = new staff();
                     mode = GameMode.First_Field;
+                    Now_state();
+                    Console.Write("\n[계속] <");
+                    Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine("당신은 천천히 동굴 속으로 걸음을 내딛었습니다.");
                     break;
                 default:
                     break;

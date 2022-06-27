@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Text_RPG_Game
 {
-    public enum PlayerWeapon
+    public enum Playerweapon
     {
         none = 0,
         sword = 1,
@@ -14,49 +14,34 @@ namespace Text_RPG_Game
         staff = 3
     }
 
-    public class Player
+    class Player : Creature
     {
-        protected int hp = 0;
-        protected int attack = 0;
-        protected int AD_defence = 0;
-        protected int AP_defence = 0;
-        protected PlayerWeapon weapon = PlayerWeapon.none;
-
-        protected Player(PlayerWeapon weapon)
+        protected Playerweapon weapon = Playerweapon.none;
+        protected Player(Playerweapon weapon) : base(CreatureType.Player)
         {
             this.weapon = weapon;
         }
 
-        public void BaseState(int hp, int attack)
-        {
-            this.hp = hp;
-            this.attack = attack;
-        }
-
-        public int GetHP() { return hp; }
-        public int GetAttack() { return attack; }
-        public int GetAD_defence() { return AD_defence; }
-        public int GetAP_defence() { return AP_defence; }
-        public PlayerWeapon GetWeapon() { return weapon; }
+        public Playerweapon Getweapon() { return weapon; }
     }
 
     class sword : Player
     {
-        public sword() : base(PlayerWeapon.sword)
+        public sword() : base(Playerweapon.sword)
         {
             BaseState(15, 3);
         }
     }
     class bow : Player
     {
-        public bow() : base(PlayerWeapon.bow)
+        public bow() : base(Playerweapon.bow)
         {
             BaseState(13, 5);
         }
     }
     class staff : Player
     {
-        public staff() : base(PlayerWeapon.staff)
+        public staff() : base(Playerweapon.staff)
         {
             BaseState(10, 7);
         }
