@@ -23,6 +23,17 @@ namespace Text_RPG_Game
         private Player player = null;
         private GameMode mode = GameMode.Start;
 
+        public void Now_state()
+        {
+            int now_hp = player.GetHP();
+            int now_attack = player.GetAttack();
+            int now_ADdef = player.GetAD_defence();
+            int now_APdef = player.GetAP_defence();
+            Console.WriteLine("현재 능력치\n");
+            Console.WriteLine("HP : {0}\n공격력 : {1}\n물리 방어 : {2}\n마법방어 : {3}",
+                              now_hp, now_attack, now_ADdef, now_APdef);
+        }
+
         public void modechanger()
         {
             switch (mode)
@@ -61,6 +72,7 @@ namespace Text_RPG_Game
                     Console.WriteLine("당신은 천천히 동굴 속으로 걸음을 내딛었습니다.");
                     player = new sword();
                     mode = GameMode.First_Field;
+                    Now_state();
                     break;
                 case "2":
                     Console.WriteLine("활을 집었습니다.");
