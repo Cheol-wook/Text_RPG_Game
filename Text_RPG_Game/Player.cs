@@ -35,14 +35,30 @@ namespace Text_RPG_Game
 
         public int GetHP() { return hp; }
         public int GetAttack() { return attack; }
+        public int GetAD_defence() { return AD_defence; }
+        public int GetAP_defence() { return AP_defence; }
         public PlayerWeapon GetWeapon() { return weapon; }
     }
 
-    class Sword : Player
+    class sword : Player
     {
-        public Sword() : base(PlayerWeapon.sword)
+        public sword() : base(PlayerWeapon.sword)
         {
-            BaseState(13, 3);
+            BaseState(15, 3);
+        }
+    }
+    class bow : Player
+    {
+        public bow() : base(PlayerWeapon.bow)
+        {
+            BaseState(13, 5);
+        }
+    }
+    class staff : Player
+    {
+        public staff() : base(PlayerWeapon.staff)
+        {
+            BaseState(10, 7);
         }
     }
 }
