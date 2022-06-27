@@ -6,10 +6,26 @@ using System.Threading.Tasks;
 
 namespace Text_RPG_Game
 {
+    public enum PlayerWeapon
+    {
+        none = 0,
+        sword = 1,
+        bow = 2,
+        staff = 3
+    }
+
     public class Player
     {
         protected int hp = 0;
         protected int attack = 0;
+        protected int AD_defence = 0;
+        protected int AP_defence = 0;
+        protected PlayerWeapon weapon = PlayerWeapon.none;
+
+        protected Player(PlayerWeapon weapon)
+        {
+            this.weapon = weapon;
+        }
 
         public void BaseState(int hp, int attack)
         {
@@ -19,5 +35,14 @@ namespace Text_RPG_Game
 
         public int GetHP() { return hp; }
         public int GetAttack() { return attack; }
+        public PlayerWeapon GetWeapon() { return weapon; }
+    }
+
+    class Sword : Player
+    {
+        public Sword() : base(PlayerWeapon.sword)
+        {
+            BaseState(13, 3);
+        }
     }
 }
